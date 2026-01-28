@@ -28,7 +28,7 @@ Russia). Специализируюсь на построении BI-отчет�
 ## 🛠 Технические навыки {#навыки}
 
 **BI & Визуализация:**
-- Power BI, DAX, Power Query
+- Power BI, DAX, Power Query, Power Pivot
 - Создание дашбордов с нуля
 - Pivot Tables, VBA
 
