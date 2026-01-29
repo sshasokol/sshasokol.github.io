@@ -11,110 +11,170 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            line-height: 1.7;
-            color: #333;
+            line-height: 1.6; /* Немного уменьшил межстрочный интервал для плотности */
+            color: #1f2937; /* Более глубокий, нейтральный серый для текста */
             background-color: #f9fafb;
             padding: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
+            max-width: 900px; /* Слегка уменьшил максимальную ширину для удобочитаемости */
+            margin: 40px auto; /* Увеличил верхний отступ */
         }
         .resume-card {
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-            padding: 50px;
-            margin-top: 20px;
+            border-radius: 16px; /* Чуть меньше скругление, современнее */
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06); /* Более мягкая тень */
+            padding: 48px; /* Немного уменьшил внутренние отступы */
+            margin-top: 0;
         }
         .header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            gap: 50px;
+            gap: 40px; /* Уменьшил gap */
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
         .header-text { flex: 1; min-width: 300px; }
-        .name { color: #1e293b; font-size: 3em; font-weight: 700; margin-bottom: 5px; }
-        .title { color: #3b82f6; font-size: 1.5em; font-weight: 600; margin-bottom: 15px; }
-        .tagline { color: #64748b; font-size: 1.2em; margin-bottom: 25px; }
+        .name {
+            color: #111827; /* Почти чёрный для имени */
+            font-size: 2.75em; /* Чуть меньше размер */
+            font-weight: 800; /* Жирнее для акцента */
+            margin-bottom: 8px;
+            line-height: 1.1;
+        }
+        .title {
+            color: #2563eb; /* Чуть другой оттенок синего */
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 20px; /* Увеличил отступ перед слоганом */
+        }
+        .tagline {
+            color: #6b7280; /* Более спокойный серый */
+            font-size: 1.15em;
+            margin-bottom: 32px; /* Увеличил отступ перед контактами */
+            font-weight: 400;
+        }
         .contact-bar {
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
-            background: #f1f5f9;
-            padding: 18px 25px;
-            border-radius: 12px;
+            gap: 20px;
+            background: #f8fafc; /* Светлее фон */
+            padding: 16px 24px;
+            border-radius: 10px;
             margin-bottom: 30px;
-            color: #475569;
+            color: #4b5563;
+            border: 1px solid #e5e7eb; /* Лёгкая граница вместо чисто фона */
         }
         .header-photo {
-            flex: 0 0 220px;
-            text-align: center;
+            flex: 0 0 200px; /* Чуть уменьшил ширину блока */
         }
         .header-photo img {
             width: 100%;
-            max-width: 220px;
-            border-radius: 16px;
-            box-shadow: 0 8px 20px rgba(59, 130, 246, 0.15);
+            max-width: 200px; /* Соответственно уменьшил фото */
+            border-radius: 12px;
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.12); /* Мягче тень */
         }
         .summary {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            padding: 30px;
-            border-radius: 16px;
-            margin-bottom: 50px;
-            color: #0c4a6e;
+            background: #f0f9ff; /* Светлее и нейтральнее фон */
+            padding: 28px;
+            border-radius: 12px;
+            margin-bottom: 48px;
+            color: #075985; /* Более тёмный синий для контраста */
             border-left: 5px solid #3b82f6;
+            font-weight: 400; /* Нормальная жирность */
         }
         .section-title {
-            color: #1e293b;
-            font-size: 1.8em;
-            margin: 50px 0 30px 0;
-            padding-bottom: 15px;
-            border-bottom: 3px solid #e2e8f0;
+            color: #111827;
+            font-size: 1.6em; /* Чуть меньше размер */
+            margin: 56px 0 28px 0; /* Скорректировал отступы */
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e5e7eb; /* Тонче линия */
+            font-weight: 700;
         }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Чуть уже колонки */
+            gap: 24px;
             margin-bottom: 20px;
         }
         .skill-card {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            border-top: 5px solid #3b82f6;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.2s;
+            padding: 24px;
+            border-radius: 10px;
+            border-top: 4px solid #3b82f6; /* Тонче верхняя полоска */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04); /* Почти незаметная тень */
+            transition: transform 0.2s, box-shadow 0.2s;
         }
-        .skill-card:hover { transform: translateY(-5px); }
-        .skill-card h3 { color: #1e293b; margin-bottom: 15px; font-size: 1.3em; }
+        .skill-card:hover {
+            transform: translateY(-3px); /* Меньше подъём */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
+        }
+        .skill-card h3 {
+            color: #1f2937;
+            margin-bottom: 16px;
+            font-size: 1.2em;
+            font-weight: 600;
+        }
         .skill-card ul { list-style: none; }
-        .skill-card li { margin-bottom: 8px; padding-left: 24px; position: relative; }
-        .skill-card li:before { content: '▸'; color: #3b82f6; font-weight: bold; position: absolute; left: 0; }
+        .skill-card li {
+            margin-bottom: 8px;
+            padding-left: 24px;
+            position: relative;
+            color: #4b5563; /* Серый для пунктов списка */
+        }
+        .skill-card li:before {
+            content: '▸';
+            color: #60a5fa; /* Светло-синий для буллитов */
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
         .job {
-            margin-bottom: 45px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #e2e8f0;
+            margin-bottom: 40px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #e5e7eb;
         }
         .job:last-child { border-bottom: none; }
-        .job-title { color: #1e293b; font-size: 1.4em; margin-bottom: 5px; }
-        .job-meta { color: #64748b; margin-bottom: 15px; font-weight: 500; }
-        .job ul { padding-left: 22px; }
-        .job li { margin-bottom: 12px; color: #475569; }
-        footer {
-            text-align: center;
-            margin-top: 70px;
-            padding-top: 30px;
-            border-top: 1px solid #e2e8f0;
-            color: #64748b;
+        .job-title {
+            color: #111827;
+            font-size: 1.3em;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+        .job-meta {
+            color: #6b7280;
+            margin-bottom: 18px;
+            font-weight: 500;
             font-size: 0.95em;
         }
-        .highlight { background-color: #fff7ed; color: #9a3412; padding: 2px 6px; border-radius: 4px; font-weight: 500; }
+        .job ul { padding-left: 22px; }
+        .job li {
+            margin-bottom: 10px;
+            color: #4b5563;
+        }
+        .highlight {
+            background-color: #fffbeb; /* Пастельно-жёлтый вместо оранжевого */
+            color: #92400e;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 500;
+            border: 1px solid #fde68a; /* Лёгкая граница */
+        }
+        footer {
+            text-align: center;
+            margin-top: 72px;
+            padding-top: 32px;
+            border-top: 1px solid #e5e7eb;
+            color: #6b7280;
+            font-size: 0.95em;
+        }
         @media (max-width: 768px) {
-            .header { flex-direction: column-reverse; gap: 30px; }
+            body { padding: 16px; margin: 20px auto; }
+            .resume-card { padding: 32px 24px; }
+            .header { flex-direction: column-reverse; gap: 32px; }
             .header-photo { align-self: center; }
-            .resume-card { padding: 30px 25px; }
-            .contact-bar { flex-direction: column; gap: 15px; }
+            .name { font-size: 2.3em; }
+            .contact-bar { flex-direction: column; gap: 12px; padding: 20px; }
+            .skills-grid { grid-template-columns: 1fr; } /* На мобильных — одна колонка */
         }
     </style>
 </head>
