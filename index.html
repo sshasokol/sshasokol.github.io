@@ -173,6 +173,53 @@
             color: #6b7280;
             font-size: 0.95em;
         }
+        .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 15px;
+    background: #f8fafc;
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-top: 30px;
+    color: #4b5563;
+    border: 1px solid #e5e7eb;
+    width: 100%;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+}
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #3b82f6;
+}
+.contact-icon {
+    font-size: 1.1em;
+}
+.contact-text {
+    font-size: 0.95em;
+    font-weight: 500;
+    white-space: nowrap;
+}
+@media (max-width: 768px) {
+    .contact-bar {
+        flex-direction: column;
+        gap: 12px;
+        padding: 20px;
+        text-align: left;
+    }
+    .contact-item {
+        justify-content: center;
+    }
+}
         @media (max-width: 768px) {
             body { padding: 16px; margin: 20px auto; }
             .resume-card { padding: 32px 24px; }
@@ -192,20 +239,36 @@
 <body>
     <div class="resume-card">
         <header class="header">
-            <div class="header-text">
-                <h1 class="name">Александр Соколов</h1>
-                <h2 class="title">Старший специалист по управлению мастер-данными</h2>
-                <p class="tagline">Data Analyst с фокусом на Data Governance, BI и автоматизацию процессов</p>
-            </div>
-            <div class="header-photo">
-                <img src="/assets/images/profile photo.jpg" alt="Александр Соколов">
-            </div>
-            <div class="contact-bar">
-                <span>📍 Санкт-Петербург</span>
-                <span>📧 rimobob@gmail.com</span>
-                <span>📱 +7 (931) 310-95-29</span>
-                <span>✈️ Telegram: @sshasokol</span>
-            </div>
+<div class="contact-bar">
+    <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        <span class="contact-text">Санкт-Петербург</span>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">📧</span>
+        <span class="contact-text">rimobob@gmail.com</span>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">📱</span>
+        <span class="contact-text">+7 (931) 310-95-29</span>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">✈️</span>
+        <span class="contact-text">Telegram: @sshasokol</span>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">💼</span>
+        <span class="contact-text">Занятость: полная</span>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">🕐</span>
+        <span class="contact-text">Формат: удалённо/гибрид</span>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">🚀</span>
+        <span class="contact-text">Готов к переезду</span>
+    </div>
+</div>
         </header>
 
         <section class="summary">
