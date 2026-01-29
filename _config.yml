@@ -13,5 +13,6 @@ plugins:
 minimal:
   social_links:
     github: sshasokol
+    show_sidebar: false
     # linkedin: ваш-id-linkedin    # раскомментируйте если есть
     # telegram: sshasokol          # раскомментируйте если есть
