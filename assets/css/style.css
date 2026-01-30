@@ -1,3 +1,256 @@
+/* ===== CSS ПЕРЕМЕННЫЕ ДЛЯ ТЕМ ===== */
+:root {
+    /* Светлая тема (по умолчанию) */
+    --bg-body: #f9fafb;
+    --bg-card: #ffffff;
+    --text-primary: #1f2937;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+    --border-color: #e5e7eb;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    --primary: #3b82f6;
+    --primary-light: #dbeafe;
+    --highlight-bg: #fffbeb;
+    --highlight-text: #92400e;
+    --success: #10b981;
+    --purple: #8b5cf6;
+    --orange: #f59e0b;
+}
+
+/* Темная тема */
+.theme-dark {
+    --bg-body: #111827;
+    --bg-card: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-light: #9ca3af;
+    --border-color: #374151;
+    --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+    --primary: #60a5fa;
+    --primary-light: #1e3a8a;
+    --highlight-bg: #78350f;
+    --highlight-text: #fef3c7;
+    --success: #34d399;
+    --purple: #a78bfa;
+    --orange: #fbbf24;
+}
+
+/* ===== ОСНОВНЫЕ СТИЛИ С ИСПОЛЬЗОВАНИЕМ ПЕРЕМЕННЫХ ===== */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--bg-body);
+    padding: 20px;
+    max-width: 900px;
+    margin: 40px auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.resume-card {
+    background: var(--bg-card);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    padding: 48px;
+    margin-top: 0;
+    transition: all 0.3s ease;
+}
+
+/* ОБНОВЛЯЕМ ВСЕ ЦВЕТА В СТИЛЯХ */
+.name {
+    color: var(--text-primary);
+    font-size: 2.75em;
+    font-weight: 800;
+    margin-bottom: 8px;
+    line-height: 1.1;
+}
+
+.title {
+    color: var(--primary);
+    font-size: 1.1em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    color: var(--text-secondary);
+    font-size: 1.15em;
+    margin-bottom: 32px;
+    font-weight: 400;
+}
+
+.section-title {
+    color: var(--text-primary);
+    font-size: 1.6em;
+    margin: 56px 0 28px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-color);
+    font-weight: 700;
+}
+
+.skill-card {
+    background: var(--bg-card);
+    padding: 24px;
+    border-radius: 10px;
+    border-top: 4px solid var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s, box-shadow 0.2s, background-color 0.3s;
+}
+
+.skill-card:nth-child(1) { border-top-color: var(--primary); }
+.skill-card:nth-child(2) { border-top-color: var(--success); }
+.skill-card:nth-child(3) { border-top-color: var(--purple); }
+.skill-card:nth-child(4) { border-top-color: var(--orange); }
+
+.job {
+    margin-bottom: 40px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.highlight {
+    background-color: var(--highlight-bg);
+    color: var(--highlight-text);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+}
+
+.tech-tag {
+    background: var(--bg-card);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.tech-tag:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+/* Контактная плашка */
+.contact-bar {
+    display: grid;
+    gap: 12px;
+    background: var(--primary-light);
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 30px;
+    border: 1px solid var(--border-color);
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 12px;
+    background: var(--bg-card);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    text-align: center;
+    min-height: 54px;
+    width: 100%;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--primary);
+}
+
+.contact-item-city {
+    border-color: var(--primary);
+    background: var(--primary-light);
+    font-weight: 600;
+}
+
+.contact-item-download {
+    background: linear-gradient(135deg, var(--primary-light) 0%, rgba(96, 165, 250, 0.2) 100%);
+    border-color: var(--primary);
+    font-weight: 600;
+}
+
+.contact-link, a {
+    font-size: 0.95em;
+    font-weight: 500;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.contact-link:hover, a:hover {
+    color: var(--primary);
+}
+
+.contact-text {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.summary {
+    background: var(--primary-light);
+    padding: 28px;
+    border-radius: 12px;
+    margin-bottom: 48px;
+    color: var(--text-primary);
+    border-left: 5px solid var(--primary);
+    font-weight: 400;
+}
+
+/* ===== ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ ===== */
+.theme-switcher {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    z-index: 1000;
+}
+
+.theme-toggle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background: var(--primary);
+    color: white;
+    cursor: pointer;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .theme-switcher {
+        top: 20px;
+        right: 20px;
+    }
+    
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+        font-size: 1.3em;
+    }
+}
 * { 
     margin: 0; 
     padding: 0; 
