@@ -80,6 +80,121 @@
         }
         
         /* ===== ИСПРАВЛЕННАЯ КОНТАКТНАЯ ПЛАШКА ===== */
+        /* ===== КОНТАКТНАЯ ПЛАШКА С САНКТ-ПЕТЕРБУРГОМ ПОСЕРЕДИНЕ ===== */
+.contact-bar {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    background: #f8fafc;
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 30px;
+    border: 1px solid #e5e7eb;
+    width: 100%;
+}
+
+/* Плашка Санкт-Петербурга - центральная в первой строке */
+.contact-item-main {
+    grid-column: 3; /* Третья колонка из 5 */
+    grid-row: 1;
+}
+
+/* Остальные плашки первой строки */
+.contact-item:nth-child(1) { grid-column: 1; grid-row: 1; } /* Telegram */
+.contact-item:nth-child(2) { grid-column: 2; grid-row: 1; } /* Email */
+.contact-item:nth-child(4) { grid-column: 4; grid-row: 1; } /* Телефон */
+
+/* Вторая строка занимает 3 колонки с отступами */
+.contact-item:nth-child(5) { 
+    grid-column: 2; 
+    grid-row: 2;
+    justify-self: end;
+}
+.contact-item:nth-child(6) { 
+    grid-column: 3; 
+    grid-row: 2;
+    justify-self: center;
+}
+.contact-item:nth-child(7) { 
+    grid-column: 4; 
+    grid-row: 2;
+    justify-self: start;
+}
+
+/* Кнопка PDF - третья строка, полная ширина */
+.contact-item-download {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-color: #3b82f6;
+    grid-column: 1 / -1; /* Занимает все 5 колонок */
+    grid-row: 3;
+    font-weight: 600;
+    margin-top: 8px;
+}
+
+/* Стиль для центральной плашки */
+.contact-item-main {
+    border-color: #3b82f6;
+    background: #f0f9ff;
+    font-weight: 600;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+    .contact-bar {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        padding: 18px;
+    }
+    
+    /* На мобильных - простая сетка 3 колонки */
+    .contact-item-main {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    
+    .contact-item:nth-child(1) { grid-column: 1; grid-row: 1; }
+    .contact-item:nth-child(2) { grid-column: 3; grid-row: 1; }
+    .contact-item:nth-child(4) { grid-column: 1; grid-row: 2; }
+    
+    .contact-item:nth-child(5) { 
+        grid-column: 2; 
+        grid-row: 2;
+        justify-self: center;
+    }
+    .contact-item:nth-child(6) { 
+        grid-column: 3; 
+        grid-row: 2;
+        justify-self: end;
+    }
+    .contact-item:nth-child(7) { 
+        grid-column: 1; 
+        grid-row: 3;
+        justify-self: start;
+    }
+    
+    .contact-item-download {
+        grid-column: 2 / -1;
+        grid-row: 3;
+    }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 480px) {
+    .contact-bar {
+        grid-template-columns: 1fr;
+    }
+    
+    /* На очень маленьких - вертикальный список */
+    .contact-item {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+        justify-self: stretch !important;
+    }
+    
+    .contact-item:nth-child(3) {
+        order: -1; /* Санкт-Петербург первым */
+    }
+}
         .contact-bar {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -359,20 +474,27 @@
             <div class="header-photo">
                 <img src="/assets/images/profile photo.jpg" alt="Александр Соколов">
             </div>
-            <!-- ИСПРАВЛЕННАЯ КОНТАКТНАЯ ПЛАШКА -->
+<!-- ИСПРАВЛЕННАЯ КОНТАКТНАЯ ПЛАШКА с Санкт-Петербургом посередине -->
 <div class="contact-bar">
+    <!-- Первая строка -->
     <div class="contact-item">
         <span class="contact-icon">✈️</span>
         <a href="https://t.me/sshasokol" target="_blank" class="contact-link">Telegram</a>
     </div>
-        <div class="contact-item">
+    <div class="contact-item">
         <span class="contact-icon">📧</span>
         <a href="mailto:rimobob@gmail.com?subject=Резюме с сайта&body=Здравствуйте, Александр! Пишу по поводу вашего резюме." class="contact-link">Email</a>
     </div>
-        <div class="contact-item">
+    <div class="contact-item contact-item-main">
+        <span class="contact-icon">📍</span>
+        <span class="contact-link" title="Санкт-Петербург">СПб</span>
+    </div>
+    <div class="contact-item">
         <span class="contact-icon">📱</span>
         <a href="tel:+79313109529" class="contact-link">Телефон</a>
     </div>
+    
+    <!-- Вторая строка -->
     <div class="contact-item">
         <span class="contact-icon">💼</span>
         <span class="contact-text">Полная занятость</span>
@@ -385,11 +507,8 @@
         <span class="contact-icon">🚀</span>
         <span class="contact-text">Готов к переезду</span>
     </div>
-        <div class="contact-item">
-        <span class="contact-icon">📍</span>
-        <a href="https://yandex.ru/maps/2/saint-petersburg/" target="_blank" class="contact-link" title="Посмотреть на карте">Санкт-Петербург</a>
-    </div>
-    <!-- КНОПКА PDF - ВАРИАНТ 1 (Email запрос) -->
+    
+    <!-- Третья строка (полная ширина) -->
     <div class="contact-item contact-item-download">
         <span class="contact-icon">📄</span>
         <a href="mailto:rimobob@gmail.com?subject=Резюме в PDF&body=Здравствуйте, Александр! Вышлите, пожалуйста, ваше резюме в PDF формате." class="contact-link">
