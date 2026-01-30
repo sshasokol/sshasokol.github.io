@@ -7,7 +7,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-     <title>Александр Соколов | Старший специалист по управлению мастер-данными</title>
     <meta name="description" content="Data Analyst с более чем 3-летним опытом в FMCG и IT (структура Heineken Russia). 
         Специализируюсь на построении BI-отчетности, автоматизации процессов на Python и управлении мастер-данными. 
         Нацелен на то, чтобы сделать данные доступными и понятными для бизнеса, 
@@ -261,70 +260,52 @@
         </footer>
     </div>
 
-    <!-- Переключатель темы -->
-<div class="theme-switcher">
-    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
-        <span id="themeIcon">🌙</span>
-    </button>
-</div>
-
-<!-- Остальной контент -->
-<div class="resume-card">
-    <!-- твоё резюме -->
-</div>
     <script>
-// Функция переключения темы
-function toggleTheme() {
-    const body = document.body;
-    const themeIcon = document.getElementById('themeIcon');
-    
-    if (body.classList.contains('theme-light')) {
-        // Переключаем на тёмную
-        body.classList.remove('theme-light');
-        body.classList.add('theme-dark');
-        themeIcon.textContent = '☀️';
-        localStorage.setItem('theme', 'dark');
-    } else {
-        // Переключаем на светлую
-        body.classList.remove('theme-dark');
-        body.classList.add('theme-light');
-        themeIcon.textContent = '🌙';
-        localStorage.setItem('theme', 'light');
-    }
-}
+        // Функция переключения темы
+        function toggleTheme() {
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            if (body.classList.contains('theme-light')) {
+                // Переключаем на тёмную
+                body.classList.remove('theme-light');
+                body.classList.add('theme-dark');
+                themeIcon.textContent = '☀️';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                // Переключаем на светлую
+                body.classList.remove('theme-dark');
+                body.classList.add('theme-light');
+                themeIcon.textContent = '🌙';
+                localStorage.setItem('theme', 'light');
+            }
+        }
 
-// Загружаем сохранённую тему
-function loadTheme() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    const body = document.body;
-    const themeIcon = document.getElementById('themeIcon');
-    
-    if (savedTheme === 'dark') {
-        body.classList.remove('theme-light');
-        body.classList.add('theme-dark');
-        themeIcon.textContent = '☀️';
-    } else {
-        body.classList.remove('theme-dark');
-        body.classList.add('theme-light');
-        themeIcon.textContent = '🌙';
-    }
-}
+        // Загружаем сохранённую тему
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            const body = document.body;
+            const themeIcon = document.getElementById('themeIcon');
+            
+            if (savedTheme === 'dark') {
+                body.classList.remove('theme-light');
+                body.classList.add('theme-dark');
+                themeIcon.textContent = '☀️';
+            } else {
+                body.classList.remove('theme-dark');
+                body.classList.add('theme-light');
+                themeIcon.textContent = '🌙';
+            }
+        }
 
-// Инициализация
-document.addEventListener('DOMContentLoaded', function() {
-    // Загружаем тему
-    loadTheme();
-    
-    // Вешаем обработчик на кнопку
-    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
-    
-    // Добавляем анимацию при загрузке
-    document.body.style.opacity = '0';
-    setTimeout(() => {
-        document.body.style.transition = 'opacity 0.5s ease';
-        document.body.style.opacity = '1';
-    }, 100);
-});
-</script>
+        // Инициализация
+        document.addEventListener('DOMContentLoaded', function() {
+            // Загружаем тему
+            loadTheme();
+            
+            // Вешаем обработчик на кнопку
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+        });
+    </script>
 </body>
 </html>
