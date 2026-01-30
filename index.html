@@ -80,10 +80,9 @@
         }
         
         /* ===== КОНТАКТНАЯ ПЛАШКА С ГОРОДОМ ПОСЕРЕДИНЕ (Flexbox) ===== */
+/* ===== УПРОЩЕННАЯ И ИСПРАВЛЕННАЯ КОНТАКТНАЯ ПЛАШКА ===== */
 .contact-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
     gap: 12px;
     background: #f8fafc;
     padding: 22px;
@@ -93,45 +92,111 @@
     width: 100%;
 }
 
+/* ДЕСКТОП ВЕРСИЯ (900px+) - 3x3 сетка */
+@media (min-width: 901px) {
+    .contact-bar {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto;
+    }
+    
+    /* Верхний ряд: Telegram, Email, Телефон */
+    .contact-item:nth-child(1) { grid-column: 1; grid-row: 1; } /* Telegram */
+    .contact-item:nth-child(2) { grid-column: 2; grid-row: 1; } /* Email */
+    .contact-item:nth-child(3) { grid-column: 3; grid-row: 1; } /* Телефон */
+    
+    /* Средний ряд: Полная занятость, Удалённо, СПб */
+    .contact-item:nth-child(4) { grid-column: 1; grid-row: 2; } /* Полная занятость */
+    .contact-item:nth-child(5) { grid-column: 2; grid-row: 2; } /* Удалённо/гибрид */
+    .contact-item-city { grid-column: 3; grid-row: 2; } /* СПб */
+    
+    /* Нижний ряд: PDF по запросу (на всю ширину) */
+    .contact-item-download { 
+        grid-column: 1 / -1; 
+        grid-row: 3;
+    }
+}
+
+/* ПЛАНШЕТ ВЕРСИЯ (601px - 900px) - 2x4 сетка */
+@media (min-width: 601px) and (max-width: 900px) {
+    .contact-bar {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto auto auto auto;
+    }
+    
+    /* Верхний ряд: Telegram, Email */
+    .contact-item:nth-child(1) { grid-column: 1; grid-row: 1; } /* Telegram */
+    .contact-item:nth-child(2) { grid-column: 2; grid-row: 1; } /* Email */
+    
+    /* Второй ряд: Телефон, Полная занятость */
+    .contact-item:nth-child(3) { grid-column: 1; grid-row: 2; } /* Телефон */
+    .contact-item:nth-child(4) { grid-column: 2; grid-row: 2; } /* Полная занятость */
+    
+    /* Третий ряд: Удалённо, СПб */
+    .contact-item:nth-child(5) { grid-column: 1; grid-row: 3; } /* Удалённо/гибрид */
+    .contact-item-city { grid-column: 2; grid-row: 3; } /* СПб */
+    
+    /* Нижний ряд: PDF (на всю ширину) */
+    .contact-item-download { 
+        grid-column: 1 / -1; 
+        grid-row: 4;
+    }
+}
+
+/* МОБИЛЬНАЯ ВЕРСИЯ (до 600px) - вертикальный список */
+@media (max-width: 600px) {
+    .contact-bar {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    
+    /* Все плашки в одну колонку, порядок как нужно */
+    .contact-item:nth-child(1) { order: 1; } /* Telegram */
+    .contact-item:nth-child(2) { order: 2; } /* Email */
+    .contact-item:nth-child(3) { order: 3; } /* Телефон */
+    .contact-item:nth-child(4) { order: 4; } /* Полная занятость */
+    .contact-item:nth-child(5) { order: 5; } /* Удалённо/гибрид */
+    .contact-item-city { order: 6; } /* СПб */
+    .contact-item-download { order: 7; } /* PDF */
+}
+
+/* ОБЩИЕ СТИЛИ ДЛЯ ПЛАШЕК */
 .contact-item {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 14px;
+    padding: 14px 12px;
     background: white;
     border-radius: 10px;
     border: 1px solid #e5e7eb;
     transition: all 0.2s ease;
     text-align: center;
     min-height: 54px;
-    flex: 1 0 calc(20% - 12px); /* ~20% ширины минус отступы */
-    min-width: 140px;
-    max-width: 200px;
-}
-
-/* Плашка Санкт-Петербурга - выделенная */
-.contact-item-city {
-    border-color: #3b82f6;
-    background: #f0f9ff;
-    font-weight: 600;
-    order: 0; /* Будет в середине автоматически благодаря flex */
-}
-
-/* Кнопка PDF - полная ширина */
-.contact-item-download {
-    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-    border-color: #3b82f6;
-    flex: 1 0 100%; /* Занимает всю ширину */
-    font-weight: 600;
-    margin-top: 8px;
-    max-width: none;
+    width: 100%;
 }
 
 .contact-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     border-color: #3b82f6;
+}
+
+/* Особый стиль для плашки СПб */
+.contact-item-city {
+    border-color: #3b82f6;
+    background: #f0f9ff;
+    font-weight: 600;
+}
+
+/* Кнопка PDF */
+.contact-item-download {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-color: #3b82f6;
+    font-weight: 600;
+}
+
+.contact-item-download:hover {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
 }
 
 .contact-icon {
@@ -159,30 +224,6 @@
     font-weight: 500;
     color: #4b5563;
     white-space: nowrap;
-}
-
-.contact-item-download:hover {
-    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-}
-
-/* Адаптация */
-@media (max-width: 900px) {
-    .contact-item {
-        flex: 1 0 calc(33.333% - 12px); /* 3 колонки */
-        min-width: 120px;
-    }
-}
-
-@media (max-width: 600px) {
-    .contact-item {
-        flex: 1 0 calc(50% - 12px); /* 2 колонки */
-        min-width: 100px;
-    }
-    
-    .contact-item-city {
-        order: -1; /* Город будет первым на мобильных */
-        flex: 1 0 100%; /* Занимает всю ширину */
-    }
 }
         
         .summary {
@@ -395,6 +436,7 @@
             </div>
             <!-- ИСПРАВЛЕННАЯ КОНТАКТНАЯ ПЛАШКА -->
 <div class="contact-bar">
+    <!-- Верхний ряд -->
     <div class="contact-item">
         <span class="contact-icon">✈️</span>
         <a href="https://t.me/sshasokol" target="_blank" class="contact-link">Telegram</a>
@@ -403,14 +445,12 @@
         <span class="contact-icon">📧</span>
         <a href="mailto:rimobob@gmail.com" class="contact-link">Email</a>
     </div>
-    <div class="contact-item contact-item-city">
-        <span class="contact-icon">📍</span>
-        <span class="contact-link">СПб</span>
-    </div>
     <div class="contact-item">
         <span class="contact-icon">📱</span>
         <a href="tel:+79313109529" class="contact-link">Телефон</a>
     </div>
+    
+    <!-- Средний ряд -->
     <div class="contact-item">
         <span class="contact-icon">💼</span>
         <span class="contact-text">Полная занятость</span>
@@ -419,10 +459,12 @@
         <span class="contact-icon">🕐</span>
         <span class="contact-text">Удалённо/гибрид</span>
     </div>
-    <div class="contact-item">
-        <span class="contact-icon">🚀</span>
-        <span class="contact-text">Переезд</span>
+    <div class="contact-item contact-item-city">
+        <span class="contact-icon">📍</span>
+        <span class="contact-link">СПб</span>
     </div>
+    
+    <!-- Нижний ряд (PDF) -->
     <div class="contact-item contact-item-download">
         <span class="contact-icon">📄</span>
         <a href="mailto:rimobob@gmail.com" class="contact-link">PDF по запросу</a>
