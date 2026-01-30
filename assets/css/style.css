@@ -15,6 +15,9 @@
     --success: #10b981;
     --purple: #8b5cf6;
     --orange: #f59e0b;
+    --contact-bar-bg: #f8fafc;
+    --contact-city-bg: #f0f9ff;
+    --contact-download-bg: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
 }
 
 /* Темная тема */
@@ -33,6 +36,9 @@
     --success: #34d399;
     --purple: #a78bfa;
     --orange: #fbbf24;
+     --contact-bar-bg: #1e293b; /* Темнее основного фона */
+    --contact-city-bg: rgba(59, 130, 246, 0.15); /* Полупрозрачный синий */
+    --contact-download-bg: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(96, 165, 250, 0.1) 100%);
 }
 
 /* ===== ОСНОВНЫЕ СТИЛИ ===== */
@@ -114,7 +120,7 @@ body {
 .contact-bar {
     display: grid;
     gap: 12px;
-    background: var(--primary-light);
+    background: var(--contact-bar-bg); /* Новая переменная */
     padding: 22px;
     border-radius: 12px;
     margin-top: 30px;
@@ -166,12 +172,12 @@ body {
 
 .contact-item-city {
     border-color: var(--primary);
-    background: var(--primary-light);
+    background: var(--contact-city-bg); 
     font-weight: 600;
 }
 
 .contact-item-download {
-    background: linear-gradient(135deg, var(--primary-light) 0%, rgba(96, 165, 250, 0.2) 100%);
+    background: var(--contact-download-bg); /* Используем новую переменную */
     border-color: var(--primary);
     font-weight: 600;
 }
@@ -432,6 +438,10 @@ footer {
         grid-column: 1 / -1;
         margin-top: 4px;
     }
+    .contact-item-download:hover {
+    background: var(--contact-download-bg);
+    opacity: 0.9; 
+}
 
     .skills-grid { 
         grid-template-columns: 1fr; 
