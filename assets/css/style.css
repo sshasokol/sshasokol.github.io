@@ -252,7 +252,7 @@ body {
 }
 /* ===== РАЗДЕЛ ЦЕННОСТЕЙ ===== */
 .values-section {
-    background: var(--values-bg) !important; /* !important переопределит inline-стили если они остались */
+    background: var(--values-bg) !important; 
     border-left-color: var(--purple) !important;
 }
 
@@ -263,7 +263,7 @@ body {
 
 /* Темная тема */
 .theme-dark {
-    --values-bg: #2e1065; /* Тёмно-фиолетовый */
+    --values-bg: #111827; /* Тёмно-фиолетовый */
 }
 
 /* ===== КАРТОЧКИ НАВЫКОВ ===== */
