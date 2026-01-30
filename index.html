@@ -79,77 +79,111 @@
             box-shadow: 0 6px 16px rgba(59, 130, 246, 0.12);
         }
         
-        /* ===== ИСПРАВЛЕННАЯ КОНТАКТНАЯ ПЛАШКА ===== */
-        .contact-bar {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            background: #f8fafc;
-            padding: 22px;
-            border-radius: 12px;
-            margin-top: 30px;
-            border: 1px solid #e5e7eb;
-            width: 100%;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            padding: 14px;
-            background: white;
-            border-radius: 10px;
-            border: 1px solid #e5e7eb;
-            transition: all 0.2s ease;
-            text-align: center;
-            min-height: 54px;
-        }
-        
-        .contact-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            border-color: #3b82f6;
-        }
-        
-        .contact-icon {
-            font-size: 1.1em;
-            flex-shrink: 0;
-            width: 22px;
-            text-align: center;
-        }
-        
-        .contact-link, a {
-            font-size: 0.95em;
-            font-weight: 500;
-            color: #1f2937;
-            text-decoration: none;
-            transition: color 0.2s;
-            white-space: nowrap;
-        }
-        
-        .contact-link:hover, a:hover {
-            color: #3b82f6;
-        }
-        
-        .contact-text {
-            font-size: 0.9em;
-            font-weight: 500;
-            color: #4b5563;
-            white-space: nowrap;
-        }
-        
-        /* Кнопка скачивания PDF */
-        .contact-item-download {
-            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-            border-color: #3b82f6;
-            grid-column: 1 / -1; /* Занимает всю ширину */
-            font-weight: 600;
-        }
-        
-        .contact-item-download:hover {
-            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-        }
+        /* ===== КОНТАКТНАЯ ПЛАШКА С ГОРОДОМ ПОСЕРЕДИНЕ (Flexbox) ===== */
+.contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    background: #f8fafc;
+    padding: 22px;
+    border-radius: 12px;
+    margin-top: 30px;
+    border: 1px solid #e5e7eb;
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+    text-align: center;
+    min-height: 54px;
+    flex: 1 0 calc(20% - 12px); /* ~20% ширины минус отступы */
+    min-width: 140px;
+    max-width: 200px;
+}
+
+/* Плашка Санкт-Петербурга - выделенная */
+.contact-item-city {
+    border-color: #3b82f6;
+    background: #f0f9ff;
+    font-weight: 600;
+    order: 0; /* Будет в середине автоматически благодаря flex */
+}
+
+/* Кнопка PDF - полная ширина */
+.contact-item-download {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+    border-color: #3b82f6;
+    flex: 1 0 100%; /* Занимает всю ширину */
+    font-weight: 600;
+    margin-top: 8px;
+    max-width: none;
+}
+
+.contact-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #3b82f6;
+}
+
+.contact-icon {
+    font-size: 1.1em;
+    flex-shrink: 0;
+    width: 22px;
+    text-align: center;
+}
+
+.contact-link, a {
+    font-size: 0.95em;
+    font-weight: 500;
+    color: #1f2937;
+    text-decoration: none;
+    transition: color 0.2s;
+    white-space: nowrap;
+}
+
+.contact-link:hover, a:hover {
+    color: #3b82f6;
+}
+
+.contact-text {
+    font-size: 0.9em;
+    font-weight: 500;
+    color: #4b5563;
+    white-space: nowrap;
+}
+
+.contact-item-download:hover {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+}
+
+/* Адаптация */
+@media (max-width: 900px) {
+    .contact-item {
+        flex: 1 0 calc(33.333% - 12px); /* 3 колонки */
+        min-width: 120px;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact-item {
+        flex: 1 0 calc(50% - 12px); /* 2 колонки */
+        min-width: 100px;
+    }
+    
+    .contact-item-city {
+        order: -1; /* Город будет первым на мобильных */
+        flex: 1 0 100%; /* Занимает всю ширину */
+    }
+}
         
         .summary {
             background: #f0f9ff;
