@@ -250,6 +250,21 @@ body {
     border-bottom: 2px solid var(--border-color);
     font-weight: 700;
 }
+/* ===== РАЗДЕЛ ЦЕННОСТЕЙ ===== */
+.values-section {
+    background: var(--values-bg) !important; /* !important переопределит inline-стили если они остались */
+    border-left-color: var(--purple) !important;
+}
+
+/* Светлая тема */
+:root {
+    --values-bg: #fef7ff;
+}
+
+/* Темная тема */
+.theme-dark {
+    --values-bg: #2e1065; /* Тёмно-фиолетовый */
+}
 
 /* ===== КАРТОЧКИ НАВЫКОВ ===== */
 .skills-grid {
