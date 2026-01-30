@@ -33,7 +33,14 @@
     <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="theme-light">
+    <!-- Переключатель темы -->
+    <div class="theme-switcher">
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+            <span id="themeIcon">🌙</span>
+        </button>
+    </div>
+    
     <div class="resume-card">
         <header class="header">
             <div class="header-text">
@@ -253,5 +260,71 @@
             <p>Полная версия резюме доступна по запросу</p>
         </footer>
     </div>
+
+    <!-- Переключатель темы -->
+<div class="theme-switcher">
+    <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+        <span id="themeIcon">🌙</span>
+    </button>
+</div>
+
+<!-- Остальной контент -->
+<div class="resume-card">
+    <!-- твоё резюме -->
+</div>
+    <script>
+// Функция переключения темы
+function toggleTheme() {
+    const body = document.body;
+    const themeIcon = document.getElementById('themeIcon');
+    
+    if (body.classList.contains('theme-light')) {
+        // Переключаем на тёмную
+        body.classList.remove('theme-light');
+        body.classList.add('theme-dark');
+        themeIcon.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+    } else {
+        // Переключаем на светлую
+        body.classList.remove('theme-dark');
+        body.classList.add('theme-light');
+        themeIcon.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Загружаем сохранённую тему
+function loadTheme() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    const body = document.body;
+    const themeIcon = document.getElementById('themeIcon');
+    
+    if (savedTheme === 'dark') {
+        body.classList.remove('theme-light');
+        body.classList.add('theme-dark');
+        themeIcon.textContent = '☀️';
+    } else {
+        body.classList.remove('theme-dark');
+        body.classList.add('theme-light');
+        themeIcon.textContent = '🌙';
+    }
+}
+
+// Инициализация
+document.addEventListener('DOMContentLoaded', function() {
+    // Загружаем тему
+    loadTheme();
+    
+    // Вешаем обработчик на кнопку
+    document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+    
+    // Добавляем анимацию при загрузке
+    document.body.style.opacity = '0';
+    setTimeout(() => {
+        document.body.style.transition = 'opacity 0.5s ease';
+        document.body.style.opacity = '1';
+    }, 100);
+});
+</script>
 </body>
 </html>
