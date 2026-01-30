@@ -13,7 +13,7 @@
             padding: 0; 
             box-sizing: border-box; 
         }
-        
+
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
             line-height: 1.6;
@@ -23,7 +23,7 @@
             max-width: 900px;
             margin: 40px auto;
         }
-        
+
         .resume-card {
             background: white;
             border-radius: 16px;
@@ -31,7 +31,7 @@
             padding: 48px;
             margin-top: 0;
         }
-        
+
         .header {
             display: flex;
             justify-content: space-between;
@@ -40,12 +40,12 @@
             margin-bottom: 40px;
             flex-wrap: wrap;
         }
-        
+
         .header-text { 
             flex: 1; 
             min-width: 300px; 
         }
-        
+
         .name {
             color: #111827;
             font-size: 2.75em;
@@ -53,32 +53,32 @@
             margin-bottom: 8px;
             line-height: 1.1;
         }
-        
+
         .title {
             color: #3a3f69;
             font-size: 1.1em;
             font-weight: 600;
             margin-bottom: 20px;
         }
-        
+
         .tagline {
             color: #6b7280;
             font-size: 1.15em;
             margin-bottom: 32px;
             font-weight: 400;
         }
-        
+
         .header-photo {
             flex: 0 0 200px;
         }
-        
+
         .header-photo img {
             width: 100%;
             max-width: 200px;
             border-radius: 12px;
             box-shadow: 0 6px 16px rgba(59, 130, 246, 0.12);
         }
-        
+
         /* ===== КОНТАКТНАЯ ПЛАШКА С ГОРОДОМ ПОСЕРЕДИНЕ (Flexbox) ===== */
 /* ===== УПРОЩЕННАЯ И ИСПРАВЛЕННАЯ КОНТАКТНАЯ ПЛАШКА ===== */
 .contact-bar {
@@ -98,17 +98,17 @@
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: auto auto auto;
     }
-    
+
     /* Верхний ряд: Telegram, Email, Телефон */
     .contact-item:nth-child(1) { grid-column: 1; grid-row: 1; } /* Telegram */
     .contact-item:nth-child(2) { grid-column: 2; grid-row: 1; } /* Email */
     .contact-item:nth-child(3) { grid-column: 3; grid-row: 1; } /* Телефон */
-    
+
     /* Средний ряд: Полная занятость, Удалённо, СПб */
     .contact-item:nth-child(4) { grid-column: 1; grid-row: 2; } /* Полная занятость */
     .contact-item:nth-child(5) { grid-column: 2; grid-row: 2; } /* Удалённо/гибрид */
     .contact-item-city { grid-column: 3; grid-row: 2; } /* СПб */
-    
+
     /* Нижний ряд: PDF по запросу (на всю ширину) */
     .contact-item-download { 
         grid-column: 1 / -1; 
@@ -122,19 +122,19 @@
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto auto auto auto;
     }
-    
+
     /* Верхний ряд: Telegram, Email */
     .contact-item:nth-child(1) { grid-column: 1; grid-row: 1; } /* Telegram */
     .contact-item:nth-child(2) { grid-column: 2; grid-row: 1; } /* Email */
-    
+
     /* Второй ряд: Телефон, Полная занятость */
     .contact-item:nth-child(3) { grid-column: 1; grid-row: 2; } /* Телефон */
     .contact-item:nth-child(4) { grid-column: 2; grid-row: 2; } /* Полная занятость */
-    
+
     /* Третий ряд: Удалённо, СПб */
     .contact-item:nth-child(5) { grid-column: 1; grid-row: 3; } /* Удалённо/гибрид */
     .contact-item-city { grid-column: 2; grid-row: 3; } /* СПб */
-    
+
     /* Нижний ряд: PDF (на всю ширину) */
     .contact-item-download { 
         grid-column: 1 / -1; 
@@ -148,7 +148,7 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
-    
+
     /* Все плашки в одну колонку, порядок как нужно */
     .contact-item:nth-child(1) { order: 1; } /* Telegram */
     .contact-item:nth-child(2) { order: 2; } /* Email */
@@ -183,6 +183,8 @@
 
 /* Особый стиль для плашки СПб */
 .contact-item-city {
+    border-color: #3b82f6;
+    background: #f0f9ff;
     border-color: #e5e7eb;
     background: white;
     font-weight: 600;
@@ -225,7 +227,7 @@
     color: #4b5563;
     white-space: nowrap;
 }
-        
+
         .summary {
             background: #f0f9ff;
             padding: 28px;
@@ -235,7 +237,7 @@
             border-left: 5px solid #3b82f6;
             font-weight: 400;
         }
-        
+
         .section-title {
             color: #111827;
             font-size: 1.6em;
@@ -244,14 +246,14 @@
             border-bottom: 2px solid #e5e7eb;
             font-weight: 700;
         }
-        
+
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 24px;
             margin-bottom: 20px;
         }
-        
+
         .skill-card {
             background: white;
             padding: 24px;
@@ -260,30 +262,30 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
             transition: transform 0.2s, box-shadow 0.2s;
         }
-        
+
         .skill-card:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.07);
         }
-        
+
         .skill-card h3 {
             color: #1f2937;
             margin-bottom: 16px;
             font-size: 1.2em;
             font-weight: 600;
         }
-        
+
         .skill-card ul { 
             list-style: none; 
         }
-        
+
         .skill-card li {
             margin-bottom: 8px;
             padding-left: 24px;
             position: relative;
             color: #4b5563;
         }
-        
+
         .skill-card li:before {
             content: '▸';
             color: #60a5fa;
@@ -291,45 +293,45 @@
             position: absolute;
             left: 0;
         }
-        
+
         .skill-card:nth-child(1) { border-top-color: #3b82f6; }
         .skill-card:nth-child(2) { border-top-color: #10b981; }
         .skill-card:nth-child(3) { border-top-color: #8b5cf6; }
         .skill-card:nth-child(4) { border-top-color: #f59e0b; }
-        
+
         .job {
             margin-bottom: 40px;
             padding-bottom: 32px;
             border-bottom: 1px solid #e5e7eb;
         }
-        
+
         .job:last-child { 
             border-bottom: none; 
         }
-        
+
         .job-title {
             color: #111827;
             font-size: 1.3em;
             margin-bottom: 6px;
             font-weight: 700;
         }
-        
+
         .job-meta {
             color: #6b7280;
             margin-bottom: 18px;
             font-weight: 500;
             font-size: 0.95em;
         }
-        
+
         .job ul { 
             padding-left: 22px; 
         }
-        
+
         .job li {
             margin-bottom: 10px;
             color: #4b5563;
         }
-        
+
         .highlight {
             background-color: #fffbeb;
             color: #92400e;
@@ -338,7 +340,7 @@
             font-weight: 500;
             border: 1px solid #fde68a;
         }
-        
+
         footer {
             text-align: center;
             margin-top: 72px;
@@ -347,7 +349,7 @@
             color: #6b7280;
             font-size: 0.95em;
         }
-        
+
         .tech-tag {
             background: white;
             padding: 8px 16px;
@@ -358,133 +360,79 @@
             font-weight: 500;
             transition: all 0.2s;
         }
-        
+
         .tech-tag:hover {
             background: #3b82f6;
             color: white;
             border-color: #3b82f6;
             transform: translateY(-2px);
         }
-        
+
         /* Адаптация для мобильных */
         @media (max-width: 768px) {
             body { 
                 padding: 16px; 
                 margin: 20px auto; 
             }
-            
+
             .resume-card { 
                 padding: 32px 24px; 
             }
-            
+
             .header { 
                 flex-direction: column-reverse; 
                 gap: 32px; 
             }
-            
+
             .header-photo { 
                 align-self: center; 
             }
-            
+
             .name { 
                 font-size: 2.3em; 
             }
-            
+
             .contact-bar {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 10px;
                 padding: 18px;
             }
-            
+
             .contact-item-download {
                 grid-column: 1 / -1;
                 margin-top: 4px;
             }
-            
+
             .skills-grid { 
                 grid-template-columns: 1fr; 
             }
         }
-        
+
         /* Очень маленькие экраны */
         @media (max-width: 480px) {
             .contact-bar {
                 grid-template-columns: 1fr;
             }
-            
+
             .contact-item {
                 padding: 12px;
             }
-            
+
             .contact-text {
                 font-size: 0.85em;
             }
         }
-        /* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ===== */
-.lang-switcher {
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    display: flex;
-    gap: 4px;
-    background: #f1f5f9;
-    padding: 4px;
-    border-radius: 12px;
-    z-index: 100;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.lang-btn {
-    padding: 8px 20px;
-    border: none;
-    background: transparent;
-    border-radius: 8px;
-    font-weight: 600;
-    cursor: pointer;
-    color: #64748b;
-    transition: all 0.3s ease;
-    font-size: 0.9em;
-}
-
-.lang-btn:hover {
-    color: #3b82f6;
-    transform: translateY(-1px);
-}
-
-.lang-btn.active {
-    background: white;
-    color: #3b82f6;
-    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
-}
-
-/* Адаптация для мобильных */
-@media (max-width: 768px) {
-    .lang-switcher {
-        top: 20px;
-        right: 20px;
-        padding: 3px;
-    }
-    
-    .lang-btn {
-        padding: 6px 16px;
-        font-size: 0.85em;
-    }
-}
     </style>
 </head>
 <body>
     <div class="resume-card">
-        <div class="lang-switcher">
-    <button class="lang-btn active" data-lang="ru" aria-label="Русский язык">RU</button>
-    <button class="lang-btn" data-lang="en" aria-label="English language">EN</button>
-</div>
         <header class="header">
             <div class="header-text">
                 <h1 class="name">Александр Соколов</h1>
                 <h2 class="title">BI Master-Data & Governance Lead</h2>
                 <p class="tagline">Data Analyst с фокусом на Data Governance и BI, успешно работающий на стыке бизнес-запросов, аналитики и управления данными. Ищу команду и проекты, где смогу развиваться на стыке аналитики, управления данными и продуктового подхода.</p>
             </div>
-            
+
             <div class="header-photo">
                 <img src="/assets/images/profile photo.jpg" alt="Александр Соколов">
             </div>
@@ -503,7 +451,7 @@
         <span class="contact-icon">📱</span>
         <a href="tel:+79313109529" class="contact-link">Телефон</a>
     </div>
-    
+
     <!-- Средний ряд -->
     <div class="contact-item">
         <span class="contact-icon">💼</span>
@@ -517,7 +465,7 @@
         <span class="contact-icon">📍</span>
          <a href="https://yandex.ru/maps/2/saint-petersburg/" target="_blank" class="contact-link" title="Посмотреть на карте">Санкт-Петербург</a>
     </div>
-    
+
     <!-- Нижний ряд (PDF) -->
     <div class="contact-item contact-item-download">
         <span class="contact-icon">📄</span>
@@ -692,386 +640,11 @@
         </div>
 
         <footer>
+            <p>📫 <strong>Связь:</strong> rimobob@gmail.com | Telegram: @sshasokol</p>
+            <p>📄 Полная версия резюме доступна по запросу</p>
             <p><strong>Связь:</strong> rimobob@gmail.com | Telegram: @sshasokol</p>
             <p>Полная версия резюме доступна по запросу</p>
         </footer>
     </div>
-    <script>
-// Английские версии текстов
-const translations = {
-    ru: {
-        // Заголовок
-        'name': 'Александр Соколов',
-        'title': 'BI Master-Data & Governance Lead',
-        'tagline': 'Data Analyst с фокусом на Data Governance и BI, успешно работающий на стыке бизнес-запросов, аналитики и управления данными. Ищу команду и проекты, где смогу развиваться на стыке аналитики, управления данными и продуктового подхода.',
-        
-        // Контакты
-        'city': 'Санкт-Петербург',
-        'email': 'Email',
-        'phone': 'Телефон',
-        'telegram': 'Telegram',
-        'employment': 'Полная занятость',
-        'format': 'Удалённо/гибрид',
-        'relocation': 'Готов к переезду',
-        'download': 'PDF по запросу',
-        
-        // Сводка
-        'summary': '<strong>Более 3 лет опыта</strong> в FMCG и IT (структура Heineken Russia). Специализируюсь на построении BI-отчетности, автоматизации процессов на Python и управлении мастер-данными. Нацелен на то, чтобы сделать данные доступными и понятными для бизнеса. Успешно работаю на стыке бизнес-запросов и технической реализации.',
-        
-        // Заголовки секций
-        'key-skills': '🚀 Ключевые компетенции',
-        'bi-skills': '📊 BI & Визуализация',
-        'bi-list': ['Power BI, DAX, Power Query', 'Создание дашбордов с нуля', 'Pivot Tables, VBA'],
-        'programming': '🐍 Программирование',
-        'programming-list': ['Python (Pandas, NumPy, Matplotlib/Seaborn)', 'Автоматизация отчетов и ETL', 'SQL (оконные функции, подзапросы)'],
-        'data-management': '🗄️ Управление данными',
-        'data-management-list': ['Data Governance (OpenMetaData, LMDM)', 'Мастер-данные (MDM), MDS', 'Аудит и оптимизация данных'],
-        'tools': '🔧 Инструменты & ERP',
-        'tools-list': ['SAP ERP, 1С', 'Git, Docker', 'Miro, Draw.io'],
-        
-        // Опыт работы
-        'experience': '💼 Опыт работы',
-        'job1-title': 'Старший специалист по мастер-данным и управлению данными',
-        'job1-meta': 'ООО «ИКС-Тех» (Дочка ООО «ОПХ»)',
-        'job1-period': '2024 — н.в.',
-        'job1-list': [
-            'Повысил точность мастер-данных на <span class="highlight">25%</span> через реструктуризацию, внедрение автоматизированных аудитов.',
-            'Автоматизировал процессы с помощью Python и VBA (<span class="highlight">-15 часов</span> ручной работы/месяц).',
-            'Инициировал проект по интеграции Local MDM и SAP ERP, участвовал в роли эксперта.',
-            'Осуществляю поддержку и обучение более 50-ти пользователей BI-инструментов, снизив количество инцидентов из-за непонимания данных.'
-        ],
-        
-        'job2-title': 'BI-аналитик',
-        'job2-meta': 'ООО «ОПХ» (в структуре Heineken)',
-        'job2-period': '2022 — 2024',
-        'job2-list': [
-            'Разработал <span class="highlight">5 ключевых дашбордов</span> в Power BI с нуля (для функций коммерции, маркетинга и логистики).',
-            'Сократил время формирования отчетности на <span class="highlight">30%</span> с помощью python-скриптов и улучшенных ETL-процессов.',
-            'Участвовал в миграции BI-системы на новый стэк.',
-            'Проводил приемочное тестирование новых моделей данных, обеспечивая их соответствие бизнес-требованиям перед выходом в продакшн'
-        ],
-        
-        // Образование
-        'education': '🎓 Образование',
-        'edu-title': 'Санкт-Петербургский Государственный Экономический Университет',
-        'edu-meta': 'Специалитет, Экономико-правовое обеспечение экономической безопасности',
-        'edu-period': '2017 – 2022',
-        'edu-list': [
-            'Углублённое изучение математического анализа, статистики и основ информационной безопасности.',
-            'Прошел программу военной подготовки в Академии МТО им. Хрулева, получил звание Сержант.'
-        ],
-        
-        // Дополнительное обучение
-        'additional': '📚 Дополнительное обучение & Профессиональное развитие',
-        'data-gov': 'Data Governance & MDM',
-        'data-gov-list': [
-            '<strong>Интенсив «Основы Data Governance»</strong> (Data Quality Community, 2025)',
-            '<strong>Серия воркшопов по Master Data Management</strong> (IT-сообщество СПб, 2024-2025)',
-            'Изучение фреймворков DAMA, практик внедрения OpenMetaData'
-        ],
-        'analytics': 'Аналитика и BI',
-        'analytics-list': [
-            '<strong>Мастер-класс «Продвинутая визуализация в Power BI»</strong> (BI Professionals Meetup, 2023)',
-            '<strong>Мини-курс «SQL для анализа данных»</strong> (Stepik, 2022)',
-            'Регулярное участие в конференциях Data Saturday (Москва, СПб)'
-        ],
-        'automation': 'Автоматизация и Python',
-        'automation-list': [
-            '<strong>Практикум «Автоматизация отчётов на Python»</strong> (Хекслет, 2024)',
-            '<strong>Серия вебинаров «Pandas для реальных задач»</strong> (OTUS, 2023)',
-            'Самостоятельное изучение архитектуры ETL-процессов и пайплайнов данных'
-        ],
-        
-        // Ценности
-        'values': '✨ Ценности & Подход к работе',
-        'processes': '🏗️ Процессы как фундамент',
-        'processes-text': 'Ценю зрелые процессы: CI/CD для аналитики, версионирование, код-ревью, автоматическое тестирование. Без этого сложно масштабировать качество.',
-        'team': '🤝 Команда & Коммуникация',
-        'team-text': 'Ищу среду, где поощряют инициативу, дают честный фидбек и ценят эмпатию. Работаю на стыке бизнеса и техники.',
-        'data-driven': '📈 Data-Driven подход',
-        'data-driven-text': 'Верю, что данные должны быть доступны и понятны каждому в компании. Цель - превращение raw data в инсайты для управленческих решений.',
-        
-        // Технологии
-        'technologies': '⚙️ Технологии в работе',
-        
-        // Хобби
-        'hobbies': '🌅 Вне работы',
-        'active': '🏔️ Активный отдых',
-        'active-list': [
-            '<strong>Экстремальные виды спорта:</strong> горные лыжи, эндуро, скейт',
-            'Походы и путешествия по природным локациям'
-        ],
-        'interests': '📚 Интересы',
-        'interests-list': [
-            '<strong>Психология:</strong> поведенческая экономика, когнитивные науки',
-            '<strong>История:</strong> анализ исторических процессов и событий'
-        ],
-        'development': '💡 Развитие',
-        'development-list': [
-            '<strong>Профессиональное:</strong> ежедневное чтение технических статей, изучение новых технологий в Data-сфере.',
-            '<strong>Личное:</strong> забота о животных, поддержание активного образа жизни'
-        ],
-        
-        // Футер
-        'footer-contact': '📫 <strong>Связь:</strong> rimobob@gmail.com | Telegram: @sshasokol',
-        'footer-pdf': '📄 Полная версия резюме доступна по запросу'
-    },
-    
-    en: {
-        // Header
-        'name': 'Alexander Sokolov',
-        'title': 'Senior Master Data Management Specialist',
-        'tagline': 'Data Analyst focused on Data Governance, BI, and process automation. Experienced in bridging business requirements, analytics, and data management. Seeking a team and projects for growth at the intersection of analytics, data governance, and product approach.',
-        
-        // Contacts
-        'city': 'St. Petersburg',
-        'email': 'Email',
-        'phone': 'Phone',
-        'telegram': 'Telegram',
-        'employment': 'Full-time',
-        'format': 'Remote/Hybrid',
-        'relocation': 'Ready to relocate',
-        'download': 'PDF on request',
-        
-        // Summary
-        'summary': '<strong>3+ years of experience</strong> in FMCG and IT (Heineken Russia structure). Specialize in building BI reporting, automating processes with Python, and managing master data. Aim to make data accessible and understandable for business. Successfully work at the intersection of business requirements and technical implementation.',
-        
-        // Section titles
-        'key-skills': '🚀 Key Competencies',
-        'bi-skills': '📊 BI & Visualization',
-        'bi-list': ['Power BI, DAX, Power Query', 'Building dashboards from scratch', 'Pivot Tables, VBA'],
-        'programming': '🐍 Programming',
-        'programming-list': ['Python (Pandas, NumPy, Matplotlib/Seaborn)', 'Report automation and ETL', 'SQL (window functions, subqueries)'],
-        'data-management': '🗄️ Data Management',
-        'data-management-list': ['Data Governance (OpenMetaData, LMDM)', 'Master Data (MDM), MDS', 'Data audit and optimization'],
-        'tools': '🔧 Tools & ERP',
-        'tools-list': ['SAP ERP, 1C', 'Git, Docker', 'Miro, Draw.io'],
-        
-        // Experience
-        'experience': '💼 Work Experience',
-        'job1-title': 'Senior Master Data & Data Governance Specialist',
-        'job1-meta': 'LLC "IKS-Tech" (Subsidiary of LLC "OPKh")',
-        'job1-period': '2024 — Present',
-        'job1-list': [
-            'Improved master data accuracy by <span class="highlight">25%</span> through restructuring and automated audit implementation.',
-            'Automated processes using Python and VBA (<span class="highlight">-15 hours</span> of manual work/month).',
-            'Initiated integration project between Local MDM and SAP ERP, participated as an expert.',
-            'Provide support and training for 50+ BI tool users, reducing incidents due to data misunderstanding.'
-        ],
-        
-        'job2-title': 'BI Analyst',
-        'job2-meta': 'LLC "OPKh" (within Heineken structure)',
-        'job2-period': '2022 — 2024',
-        'job2-list': [
-            'Developed <span class="highlight">5 key dashboards</span> in Power BI from scratch (for commercial, marketing, and logistics functions).',
-            'Reduced reporting time by <span class="highlight">30%</span> using Python scripts and improved ETL processes.',
-            'Participated in BI system migration to a new stack.',
-            'Conducted acceptance testing of new data models, ensuring business requirements compliance before production release.'
-        ],
-        
-        // Education
-        'education': '🎓 Education',
-        'edu-title': 'Saint Petersburg State University of Economics',
-        'edu-meta': 'Specialist Degree, Economic and Legal Support of Economic Security',
-        'edu-period': '2017 – 2022',
-        'edu-list': [
-            'In-depth study of mathematical analysis, statistics, and information security fundamentals.',
-            'Completed military training program at Khrulev Academy of MTO, received Sergeant rank.'
-        ],
-        
-        // Additional education
-        'additional': '📚 Additional Training & Professional Development',
-        'data-gov': 'Data Governance & MDM',
-        'data-gov-list': [
-            '<strong>Intensive "Data Governance Fundamentals"</strong> (Data Quality Community, 2025)',
-            '<strong>Workshop series on Master Data Management</strong> (IT Community St. Petersburg, 2024-2025)',
-            'Studying DAMA frameworks, OpenMetaData implementation practices'
-        ],
-        'analytics': 'Analytics and BI',
-        'analytics-list': [
-            '<strong>Masterclass "Advanced Power BI Visualization"</strong> (BI Professionals Meetup, 2023)',
-            '<strong>Mini-course "SQL for Data Analysis"</strong> (Stepik, 2022)',
-            'Regular participation in Data Saturday conferences (Moscow, St. Petersburg)'
-        ],
-        'automation': 'Automation and Python',
-        'automation-list': [
-            '<strong>Workshop "Report Automation with Python"</strong> (Hexlet, 2024)',
-            '<strong>Webinar series "Pandas for Real Tasks"</strong> (OTUS, 2023)',
-            'Self-study of ETL processes and data pipeline architecture'
-        ],
-        
-        // Values
-        'values': '✨ Values & Work Approach',
-        'processes': '🏗️ Processes as Foundation',
-        'processes-text': 'Value mature processes: CI/CD for analytics, versioning, code review, automated testing. Difficult to scale quality without these.',
-        'team': '🤝 Team & Communication',
-        'team-text': 'Seek an environment that encourages initiative, provides honest feedback, and values empathy. Work at the intersection of business and technology.',
-        'data-driven': '📈 Data-Driven Approach',
-        'data-driven-text': 'Believe data should be accessible and understandable to everyone in the company. Goal: transform raw data into insights for management decisions.',
-        
-        // Technologies
-        'technologies': '⚙️ Technologies in Use',
-        
-        // Hobbies
-        'hobbies': '🌅 Outside Work',
-        'active': '🏔️ Active Lifestyle',
-        'active-list': [
-            '<strong>Extreme sports:</strong> alpine skiing, enduro, skateboarding',
-            'Hiking and traveling to natural locations'
-        ],
-        'interests': '📚 Interests',
-        'interests-list': [
-            '<strong>Psychology:</strong> behavioral economics, cognitive sciences',
-            '<strong>History:</strong> analysis of historical processes and events'
-        ],
-        'development': '💡 Development',
-        'development-list': [
-            '<strong>Professional:</strong> daily reading of technical articles, studying new technologies in Data sphere.',
-            '<strong>Personal:</strong> animal care, maintaining active lifestyle'
-        ],
-        
-        // Footer
-        'footer-contact': '📫 <strong>Contact:</strong> rimobob@gmail.com | Telegram: @sshasokol',
-        'footer-pdf': '📄 Full resume available on request'
-    }
-};
-
-// Switch language function
-function switchLanguage(lang) {
-    const t = translations[lang];
-    
-    // Update all elements
-    document.querySelector('.name').textContent = t.name;
-    document.querySelector('.title').textContent = t.title;
-    document.querySelector('.tagline').textContent = t.tagline;
-    document.querySelector('.summary p').innerHTML = t.summary;
-    
-    // Update contact bar
-    document.querySelector('.contact-item:nth-child(1) .contact-link').textContent = t.telegram;
-    document.querySelector('.contact-item:nth-child(2) .contact-link').textContent = t.email;
-    document.querySelector('.contact-item:nth-child(3) .contact-link').textContent = t.phone;
-    document.querySelector('.contact-item:nth-child(4) .contact-text').textContent = t.employment;
-    document.querySelector('.contact-item:nth-child(5) .contact-text').textContent = t.format;
-    document.querySelector('.contact-item-city .contact-link').textContent = t.city;
-    document.querySelector('.contact-item-download .contact-link').textContent = t.download;
-    
-    // Update section titles
-    document.querySelectorAll('.section-title').forEach((el, index) => {
-        if (index === 0) el.textContent = t['key-skills'];
-        if (index === 1) el.textContent = t['experience'];
-        if (index === 2) el.textContent = t['education'];
-        if (index === 3) el.textContent = t['values'];
-        if (index === 4) el.textContent = t['technologies'];
-    });
-    
-    // Update skills cards
-    document.querySelectorAll('.skill-card h3').forEach((el, index) => {
-        if (index === 0) el.textContent = t['bi-skills'];
-        if (index === 1) el.textContent = t['programming'];
-        if (index === 2) el.textContent = t['data-management'];
-        if (index === 3) el.textContent = t['tools'];
-    });
-    
-    // Update skills lists
-    document.querySelectorAll('.skill-card li').forEach((el, index) => {
-        if (index < 3) el.textContent = t['bi-list'][index];
-        else if (index < 6) el.textContent = t['programming-list'][index - 3];
-        else if (index < 9) el.textContent = t['data-management-list'][index - 6];
-        else if (index < 12) el.textContent = t['tools-list'][index - 9];
-    });
-    
-    // Update jobs
-    document.querySelector('.job:nth-child(1) .job-title').textContent = t['job1-title'];
-    document.querySelector('.job:nth-child(1) .job-meta').innerHTML = `<strong>${t['job1-meta']}</strong> | ${t['job1-period']}`;
-    document.querySelectorAll('.job:nth-child(1) li').forEach((el, index) => {
-        el.innerHTML = t['job1-list'][index];
-    });
-    
-    document.querySelector('.job:nth-child(2) .job-title').textContent = t['job2-title'];
-    document.querySelector('.job:nth-child(2) .job-meta').innerHTML = `<strong>${t['job2-meta']}</strong> | ${t['job2-period']}`;
-    document.querySelectorAll('.job:nth-child(2) li').forEach((el, index) => {
-        el.innerHTML = t['job2-list'][index];
-    });
-    
-    // Update education
-    document.querySelector('.job:nth-child(3) .job-title').textContent = t['edu-title'];
-    document.querySelector('.job:nth-child(3) .job-meta').innerHTML = `<strong>${t['edu-meta']}</strong> | ${t['edu-period']}`;
-    document.querySelectorAll('.job:nth-child(3) li').forEach((el, index) => {
-        el.innerHTML = t['edu-list'][index];
-    });
-    
-    // Update additional training
-    document.querySelector('h3[style*="font-size: 1.4em"]').textContent = t['additional'];
-    document.querySelectorAll('.skills-grid:last-child .skill-card h3').forEach((el, index) => {
-        if (index === 0) el.textContent = t['data-gov'];
-        if (index === 1) el.textContent = t['analytics'];
-        if (index === 2) el.textContent = t['automation'];
-    });
-    
-    // Update additional training lists
-    const lastSkillsGrid = document.querySelectorAll('.skills-grid:last-child li');
-    lastSkillsGrid.forEach((el, index) => {
-        if (index < 3) el.innerHTML = t['data-gov-list'][index];
-        else if (index < 6) el.innerHTML = t['analytics-list'][index - 3];
-        else if (index < 9) el.innerHTML = t['automation-list'][index - 6];
-    });
-    
-    // Update values
-    document.querySelectorAll('.summary:last-child h4').forEach((el, index) => {
-        if (index === 0) el.textContent = t['processes'];
-        if (index === 1) el.textContent = t['team'];
-        if (index === 2) el.textContent = t['data-driven'];
-    });
-    
-    document.querySelectorAll('.summary:last-child p').forEach((el, index) => {
-        if (index === 0) el.textContent = t['processes-text'];
-        if (index === 1) el.textContent = t['team-text'];
-        if (index === 2) el.textContent = t['data-driven-text'];
-    });
-    
-    // Update hobbies
-    document.querySelectorAll('.skills-grid:last-of-type .skill-card h3').forEach((el, index) => {
-        if (index === 0) el.textContent = t['active'];
-        if (index === 1) el.textContent = t['interests'];
-        if (index === 2) el.textContent = t['development'];
-    });
-    
-    const hobbiesGrid = document.querySelectorAll('.skills-grid:last-of-type li');
-    hobbiesGrid.forEach((el, index) => {
-        if (index < 2) el.innerHTML = t['active-list'][index];
-        else if (index < 4) el.innerHTML = t['interests-list'][index - 2];
-        else if (index < 6) el.innerHTML = t['development-list'][index - 4];
-    });
-    
-    // Update footer
-    document.querySelector('footer p:first-child').innerHTML = t['footer-contact'];
-    document.querySelector('footer p:last-child').textContent = t['footer-pdf'];
-}
-
-// Event listeners for language buttons
-document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.addEventListener('click', function() {
-        const lang = this.dataset.lang;
-        
-        // Update active button
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        this.classList.add('active');
-        
-        // Switch language
-        switchLanguage(lang);
-        
-        // Save preference to localStorage
-        localStorage.setItem('resume-lang', lang);
-    });
-});
-
-// Load saved language preference
-const savedLang = localStorage.getItem('resume-lang') || 'ru';
-if (savedLang === 'en') {
-    document.querySelector('.lang-btn[data-lang="ru"]').classList.remove('active');
-    document.querySelector('.lang-btn[data-lang="en"]').classList.add('active');
-    switchLanguage('en');
-}
-</script>
 </body>
 </html>
