@@ -250,6 +250,30 @@
     border-color: #3b82f6;
     transform: translateY(-2px);
 }
+        /* Стиль для кнопки скачивания */
+.contact-item-download {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    border-color: #3b82f6;
+}
+.contact-item-download .contact-icon,
+.contact-item-download .download-link {
+    color: white !important;
+}
+.contact-item-download:hover {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+.download-link {
+    font-weight: 600;
+}
+/* Для мобильных - кнопка PDF на всю ширину */
+@media (max-width: 768px) {
+    .contact-item-download {
+        min-width: 100%;
+        justify-content: center;
+        order: 10; /* Перемещаем в конец */
+    }
+}
     </style>
 </head>
 <body>
@@ -269,34 +293,39 @@
     
     <!-- Контактная плашка (теперь она здесь, а не в начале) -->
     <div class="contact-bar">
-        <div class="contact-item">
-            <span class="contact-icon">📍</span>
-            <span class="contact-text">Санкт-Петербург</span>
-        </div>
-        <div class="contact-item">
-            <span class="contact-icon">📧</span>
-            <span class="contact-text">rimobob@gmail.com</span>
-        </div>
-        <div class="contact-item">
-            <span class="contact-icon">📱</span>
-            <span class="contact-text">+7 (931) 310-95-29</span>
-        </div>
-        <div class="contact-item">
-            <span class="contact-icon">✈️</span>
-            <span class="contact-text">Telegram: @sshasokol</span>
-        </div>
-        <div class="contact-item">
-            <span class="contact-icon">💼</span>
-            <span class="contact-text">Занятость: полная</span>
-        </div>
-        <div class="contact-item">
-            <span class="contact-icon">🕐</span>
-            <span class="contact-text">Формат: удалённо/гибрид</span>
-        </div>
-        <div class="contact-item">
-            <span class="contact-icon">🚀</span>
-            <span class="contact-text">Готов к переезду</span>
-        </div>
+    <div class="contact-item">
+        <span class="contact-icon">📍</span>
+     <a href="https://yandex.ru/maps/2/saint-petersburg/" target="_blank" class="contact-link" title="Посмотреть на карте">СПб</a>
+    </div>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">📧</span>
+        <a href="mailto:rimobob@gmail.com?subject=Резюме с сайта&body=Здравствуйте, Александр! Пишу по поводу вашего резюме." class="contact-link">Email</a>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">📱</span>
+        <a href="tel:+79313109529" class="contact-link">+7 (931) 310-95-29</a>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">✈️</span>
+        <a href="https://t.me/sshasokol" target="_blank" class="contact-link">Telegram</a>
+    </div>
+    <div class="contact-item contact-item-combined">
+        <span class="contact-icon">💼</span>
+        <span class="contact-text-short">Полная</span>
+        <span class="contact-separator">•</span>
+        <span class="contact-icon">🕐</span>
+        <span class="contact-text-short">Удалённо/гибрид</span>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon">🚀</span>
+        <span class="contact-text-short">Переезд</span>
+    </div>
+            <div class="contact-item contact-item-download">
+        <span class="contact-icon">📄</span>
+        <a href="#" class="contact-link download-link" id="download-pdf">Скачать PDF</a>
+    </div>
+</div>
     </div>
 </header>
 
@@ -471,5 +500,36 @@
     </div>
 </div>
 </div>
+    <script>
+document.getElementById('download-pdf').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    // Вариант 1: Если PDF файл уже загружен на GitHub
+    // window.open('/resume.pdf', '_blank');
+    
+    // Вариант 2: Генерация PDF через браузер (простой способ)
+    const resumeContent = document.querySelector('.resume-card').innerHTML;
+    const originalContent = document.body.innerHTML;
+    
+    // Временно заменяем всё содержимое body на резюме
+    document.body.innerHTML = resumeContent;
+    
+    // Убираем лишние элементы перед печатью
+    document.querySelectorAll('.contact-item').forEach(item => {
+        if (item.classList.contains('contact-item-download')) {
+            item.remove();
+        }
+    });
+    
+    // Печать в PDF
+    window.print();
+    
+    // Восстанавливаем оригинальную страницу
+    document.body.innerHTML = originalContent;
+    
+    // Показываем сообщение
+    alert('Для сохранения в PDF:\n1. В диалоге печати выберите "Сохранить как PDF"\n2. Настройте параметры (лучше выбрать альбомную ориентацию)\n3. Нажмите "Сохранить"');
+});
+</script>
 </body>
 </html>
