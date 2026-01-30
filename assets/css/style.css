@@ -413,4 +413,96 @@
                 font-size: 0.85em;
             }
         }
+/* ===== ИСПРАВЛЕНИЯ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ ===== */
+
+/* Для очень маленьких экранов (до 480px) */
+@media (max-width: 480px) {
+    .contact-bar {
+        grid-template-columns: 1fr !important;
+        padding: 16px !important;
+        gap: 10px !important;
+    }
+    
+    .contact-item {
+        min-height: 48px !important;
+        padding: 12px 10px !important;
+        justify-content: flex-start !important;
+    }
+    
+    .contact-item-download {
+        justify-content: center !important;
+        text-align: center !important;
+    }
+    
+    /* Уменьшаем отступы на мобилках */
+    .resume-card {
+        padding: 24px 16px !important;
+        margin: 10px auto !important;
+    }
+    
+    .header {
+        gap: 24px !important;
+    }
+    
+    .name {
+        font-size: 1.8em !important;
+    }
+    
+    .tagline {
+        font-size: 1em !important;
+        line-height: 1.5 !important;
+    }
+}
+
+/* Для средних мобилок (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .contact-bar {
+        grid-template-columns: repeat(2, 1fr) !important;
+        padding: 18px !important;
+        gap: 12px !important;
+    }
+    
+    .contact-item {
+        min-height: 52px !important;
+        padding: 14px 12px !important;
+    }
+    
+    /* Чтобы плашки были компактнее */
+    .contact-link, .contact-text {
+        font-size: 0.85em !important;
+        white-space: normal !important; /* Разрешаем перенос текста */
+    }
+    
+    .contact-icon {
+        width: 20px !important;
+        font-size: 1em !important;
+    }
+}
+
+/* ===== ОБЩИЕ ИСПРАВЛЕНИЯ ДЛЯ ВСЕХ ЭКРАНОВ ===== */
+.contact-bar {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Убеждаемся что плашки не выходят за границы */
+.contact-item {
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* Убираем возможные минимальные ширины */
+@media (max-width: 768px) {
+    .contact-item {
+        min-width: unset !important;
+        max-width: 100% !important;
+    }
+    
+    /* Исправляем flex-элементы */
+    .contact-item > * {
+        flex-shrink: 1 !important;
+    }
+}
     </style>
