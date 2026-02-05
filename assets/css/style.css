@@ -521,120 +521,100 @@ font-size: 0.85em;
 }
 }
 /* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ===== */
-/* ===== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ===== */
-.lang-switcher {
-    position: absolute; /* Внутри карточки */
-    top: 20px;
-    right: 20px;
-    display: flex;
-    gap: 2px;
-    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-    padding: 4px;
-    border-radius: 12px;
-    z-index: 100;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.lang-btn {
-    padding: 8px 16px;
-    background: white;
-    color: #64748b;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 0.85em;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-    white-space: nowrap; /* Чтобы текст не переносился */
-}
-
-.lang-btn:hover {
-    background: #f8fafc;
-    color: #3b82f6;
-    transform: translateY(-1px);
-}
-
-.lang-btn.active {
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
-    color: white;
-    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Десктоп - можно чуть больше */
-@media (min-width: 769px) {
-    .lang-switcher {
-        top: 30px;
-        right: 30px;
-        padding: 5px;
-    }
-    
-    .lang-btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-}
-
-/* Мобильные (до 768px) */
-@media (max-width: 768px) {
-    .resume-card {
-        padding: 32px 24px;
-    }
-    
-    .lang-switcher {
-        top: 15px;
-        right: 15px;
-        padding: 3px;
-        /* УБИРАЕМ transform: scale - он ломает расположение */
-    }
-    
-    .lang-btn {
-        padding: 6px 12px;
-        font-size: 0.8em;
-    }
-}
-
-/* Очень маленькие экраны (до 480px) */
-@media (max-width: 480px) {
-    .lang-switcher {
-        top: 12px;
-        right: 12px;
-        /* Делаем ещё компактнее, но оставляем горизонтальным */
-    }
-    
-    .lang-btn {
-        padding: 5px 10px;
-        font-size: 0.75em;
-    }
-    
-    /* Если всё равно не влезает - уменьшаем только кнопки, НО НЕ МЕНЯЕМ НА COLUMN */
-    .lang-switcher.compact .lang-btn {
-        padding: 4px 8px;
-        font-size: 0.7em;
-    }
-}
-}
-/* ФИКСЫ ДЛЯ ПЕРЕКЛЮЧАТЕЛЯ */
+/* ===== СИЛЬНЫЙ ФИКС ДЛЯ ПЕРЕКЛЮЧАТЕЛЯ ===== */
 .lang-switcher {
     /* Гарантируем горизонтальное расположение */
+    display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
-    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    position: absolute !important;
+    top: 20px !important;
+    right: 20px !important;
+    
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%) !important;
+    padding: 4px !important;
+    border-radius: 12px !important;
+    z-index: 100 !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    
+    /* Гарантируем размер */
+    width: auto !important;
+    height: auto !important;
+    min-width: unset !important;
+    max-width: none !important;
 }
 
-/* Убираем все возможные вертикальные стили */
-.lang-switcher[style*="column"],
-.lang-switcher[style*="vertical"] {
-    flex-direction: row !important;
-}
-
-/* Гарантируем что кнопки будут рядом */
 .lang-btn {
     display: inline-block !important;
     float: none !important;
-    clear: none !important;
+    position: static !important;
+    
+    padding: 8px 16px !important;
+    background: white !important;
+    color: #64748b !important;
+    text-decoration: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 0.85em !important;
+    border: 1px solid transparent !important;
+    
+    /* Гарантируем что кнопки будут рядом */
+    margin: 0 !important;
+    margin-right: 2px !important;
 }
+
+.lang-btn:last-child {
+    margin-right: 0 !important;
+}
+
+.lang-btn:hover {
+    background: #f8fafb !important;
+    color: #3b82f6 !important;
+    transform: translateY(-1px) !important;
+}
+
+.lang-btn.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    color: white !important;
+    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+/* iPhone 13 Pro: 390x844, но учитываем Safe Area */
+@media (max-width: 428px) { /* Макс ширина iPhone */
+    .lang-switcher {
+        top: 15px !important;
+        right: 15px !important;
+        padding: 3px !important;
+    }
+    
+    .lang-btn {
+        padding: 6px 12px !important;
+        font-size: 0.8em !important;
+    }
+}
+
+/* Для совсем тесных ситуаций */
+@media (max-width: 360px) {
+    .lang-switcher {
+        top: 12px !important;
+        right: 12px !important;
+        transform: scale(0.9) !important;
+        transform-origin: top right !important;
+    }
+    
+    .lang-btn {
+        padding: 5px 10px !important;
+        font-size: 0.75em !important;
+    }
+}
+
+/* Компьютер */
+@media (min-width: 
 </style>
 
         
