@@ -615,6 +615,26 @@ font-size: 0.85em;
     }
 }
 }
+/* ФИКСЫ ДЛЯ ПЕРЕКЛЮЧАТЕЛЯ */
+.lang-switcher {
+    /* Гарантируем горизонтальное расположение */
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    display: flex !important;
+}
+
+/* Убираем все возможные вертикальные стили */
+.lang-switcher[style*="column"],
+.lang-switcher[style*="vertical"] {
+    flex-direction: row !important;
+}
+
+/* Гарантируем что кнопки будут рядом */
+.lang-btn {
+    display: inline-block !important;
+    float: none !important;
+    clear: none !important;
+}
 </style>
 
         
